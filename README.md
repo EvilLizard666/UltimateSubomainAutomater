@@ -3,7 +3,7 @@ Automate subfinder, assetfinder, findomain, aquatone, httprobe<br />
 
 what the script does is it takes domain and automate scanning for subdomains using the tools mentioned above and then save them to a file then filter the dead subdomains from the live ones and saves the live ones to a file and then run aquatone with live ones as input
 
-Make sure those tools are installed first<br />
+Make sure those tools are installed first and donot froget to copy all executables to /usr/bin/<br />
 
 https://github.com/tomnomnom/assetfinder<br />
 https://github.com/projectdiscovery/subfinder<br />
