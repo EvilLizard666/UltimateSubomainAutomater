@@ -12,4 +12,4 @@ cat subfinder.out findomain.out assetfinder.out | sort -u > allsubs.out #collect
 httpx-toolkit -l allsubs.out -sc -td -probe -server -x 'all' -o httpxtool.out
 cat httpxtool.out | grep -i nginx > nginx
 cat httpxtool.out | grep -i apache > apache
-cat allsubs.out | grep SUCCESS | cut -d " " -f 1 > SUCCESS.out
+cat allsubs.out | grep SUCCESS | cut -d " " -f 1 | sort -u > SUCCESS.out
