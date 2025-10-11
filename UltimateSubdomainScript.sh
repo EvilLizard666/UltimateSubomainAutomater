@@ -13,3 +13,5 @@ httpx-toolkit -l allsubs.out -sc -td -probe -server -x 'all' -o httpxtool.out
 cat httpxtool.out | grep -i nginx > nginx
 cat httpxtool.out | grep -i apache > apache
 cat httpxtool.out | grep SUCCESS | cut -d " " -f 1 | sort -u > SUCCESS.out
+
+nuclei -l allsubs.out -o nuclei.out
