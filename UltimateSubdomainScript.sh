@@ -24,7 +24,7 @@ cat httpxtool.out | grep -i apache > apache
 cat httpxtool.out | grep SUCCESS | cut -d " " -f 1 | sort -u > SUCCESS.out
 
 #katana
-katana -u SUCCESS.out -jc -hl -o katana.out --no-sandbox
+katana -u SUCCESS.out -jc -d 10 -jsluice -silent
 
 
 #nuclei -l allsubs.out -o nuclei.out
