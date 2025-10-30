@@ -26,5 +26,14 @@ cat httpxtool.out | grep SUCCESS | cut -d " " -f 1 | sort -u > SUCCESS.out
 #katana
 katana -u SUCCESS.out -jc -d 10 -jsluice -silent
 
+#extracting only js files urls
+cat katana.out | grep '\.js$' > onlyjsfiles
+
+#secretFinder
+while read -r url2
+do python3 /tools/recon/SecretFinder/SecretFinder.py -i "$url2" -o secretfinder.html
+done < onlyjsfiles
+
+
 
 #nuclei -l allsubs.out -o nuclei.out
