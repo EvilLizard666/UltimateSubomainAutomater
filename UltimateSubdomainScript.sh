@@ -14,7 +14,7 @@ cat ../wildcards | assetfinder --subs-only > assetfinder.out #assetfinder
 while read -r url
 do sublist3r -d "$url" -o "sublist3r/${url}.out"
 done < wildcards #sublister on all domains
-cat subfinder.out findomain.out assetfinder.out | sort -u > allsubs.out #collecting all subdomains in one file
+cat subfinder.out findomain.out assetfinder.out sublist3r/*.out | sort -u > allsubs.out #collecting all subdomains in one file
 #-----------------------grabbing subdomains-----------------------
 
 #httpx-tool
@@ -36,4 +36,4 @@ done < onlyjsfiles
 
 
 
-#nuclei -l allsubs.out -o nuclei.out
+nuclei -l SUCCESS.out -o nuclei.out
